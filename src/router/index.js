@@ -1,6 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Home_page from '../views/home_page/index.vue';
+import My_course from '../views/my_course/index.vue';
+import Shopping_cart from '../views/shopping_cart/index.vue';
+import Personal_center from '../views/personal_center/index.vue';
 import hooks from './hooks';
 
 Vue.use(VueRouter);
@@ -8,19 +11,26 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'home_page',
+    component: Home_page,
     meta: {
       keepAlive: true,
     },
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/my_course',
+    name: 'my_course',
+    component: My_course,
+  },
+  {
+    path: '/shopping_cart',
+    name: 'shopping_cart',
+    component: Shopping_cart,
+  },
+  {
+    path: '/personal_center',
+    name: 'personal_center',
+    component: Personal_center,
   },
 ];
 

@@ -20,19 +20,29 @@
 export default {
   data() {
     return {
-      selectedLabelDefault: "/", // 默认选中的导航
+      selectedLabelDefault: '/', // 默认选中的导航
       tabs: [
         {
-          label: "Home",
-          value: "/",
-          icon: "iconfont icon-wode" // icon 样式
+          label: '首页',
+          value: '/',
+          icon: 'iconfont icon-wode', // icon 样式
         },
         {
-          label: "Like",
-          icon: "cubeic-like",
-          value: "/about"
-        }
-      ]
+          label: '我的课程',
+          icon: 'cubeic-like',
+          value: '/my_course',
+        },
+        {
+          label: '购物车',
+          icon: 'cubeic-like',
+          value: '/shopping_cart',
+        },
+        {
+          label: '个人中心',
+          icon: 'iconfont icon-wode',
+          value: '/personal_center',
+        },
+      ],
     };
   },
   watch: {
@@ -42,15 +52,15 @@ export default {
       handler(to, from) {
         this.selectedLabelDefault = to.path;
       },
-      immediate: true // 立即执行
-    }
+      immediate: true, // 立即执行
+    },
   },
   methods: {
     // 切换路由
     tabChange(label) {
       this.$router.push(label);
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="less">
@@ -73,5 +83,6 @@ body {
   i {
     font-size: 28px;
   }
+  font-size: 14px;
 }
 </style>
