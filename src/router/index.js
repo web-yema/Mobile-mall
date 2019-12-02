@@ -4,6 +4,7 @@ import Home_page from '../views/home_page/index.vue';
 import My_course from '../views/my_course/index.vue';
 import Shopping_cart from '../views/shopping_cart/index.vue';
 import Personal_center from '../views/personal_center/index.vue';
+import Login from '../views/personal_center/login/index.vue';
 import hooks from './hooks';
 
 Vue.use(VueRouter);
@@ -31,6 +32,18 @@ const routes = [
     path: '/personal_center',
     name: 'personal_center',
     component: Personal_center,
+    children: [
+      {
+        path: '/personal_center/login',
+        name: 'login',
+        component: Login,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
 ];
 

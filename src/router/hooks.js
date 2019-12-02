@@ -10,7 +10,6 @@ export default {
   },
   // 权限验证
   fn1(to, from, next) {
-    console.log(2);
     next();
   },
 };

@@ -3,7 +3,7 @@
 import Ajax from '../util/request';
 // 轮播图接口
 export const getSliders = () => Ajax.request({
-    url: '/slider',
-  });
+  url: '/slider',
+});
 
 export default {};

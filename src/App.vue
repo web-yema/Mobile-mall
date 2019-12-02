@@ -72,17 +72,32 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width:450px ) {
+  body{
+    margin: 0 auto;
+    width: 67vh;
+    position: relative;
+  }
+  .footer{
+    width: 67vh !important;
+  }
+}
 .container {
+  overflow-y: auto;
   flex: 1;
 }
 .footer {
-  height: 58px;
-  border-top: 1px solid #e3e3e3;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  height: 9vh;
+  border-top: 0.01vh solid #e3e3e3;
 }
 .cube-tab {
   i {
-    font-size: 28px;
+    font-size: 5vh;
   }
-  font-size: 14px;
+  font-size: 2vh;
 }
 </style>

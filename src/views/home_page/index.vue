@@ -38,5 +38,10 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-
+  .home{
+    width: 80%;
+  }
+  .cube-slide-item > a > img{
+        width: 281px;
+  }
 </style>
