@@ -1,0 +1,136 @@
+.personal_center{
+    color: #2e2e2e;
+    height: 22vh;
+    background-attachment: fixed;
+    background-image: url('http://img5.imgtn.bdimg.com/it/u=366416667,485179466&fm=15&gp=0.jpg');
+  }
+  .topHeader{
+    float: left;
+    margin-top: 22vh;
+    width: 100%;
+    background: #F5F5F5;
+  }
+  .chunk{
+    height: 13vh;
+    background: #fff;
+    position: relative;
+  }
+  .headFace{
+    height: 15vh;
+    width: 15vh;
+    background-color: #fff;
+    position: absolute;
+    top: -7.5vh;
+    left: 20px;
+    border-radius: 50%;
+    position: relative;
+    img{
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+    span{
+        position: absolute;
+        top: 3vh;
+        left: 18vh;
+        color: #fff;
+        font-size: 3vh;
+        display: block;
+        width: 40vh;
+        overflow: hidden;
+    }
+  }
+  .big_tong{
+    background: #fff;
+    margin-top: 3vh;
+    div{
+      padding: 3vh;
+      font-size: 2.7vh;
+      position: relative;
+      img{
+        position: absolute;
+        right: 3vh;
+        top: 3vh;
+      }
+      .grshezhi{
+        position: absolute;
+        right: 3vh;
+        top: 3vh;
+        color: #666666;
+      }
+    }
+    div:hover{
+      background-color: #E5E5E5;
+    }
+    .botss{
+      border-bottom: 0.01vh solid #F4F4F4;
+    }
+  }
+  .slide-right-enter-active,
+  .slide-right-leave-active {
+    will-change: transform;
+    position: absolute; //这里的定位使用relative可以解决切换时页面残影
+  }.slide-right-enter {
+    opacity: 0;
+     transform: translate3d( 0,5%, 0);
+   }.slide-right-leave-active {
+     opacity: 0;
+     transform: translate3d( 0,20%, 0);
+   }
+.login_register{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+}
+.big_top{
+    display: flex;
+    padding: 2.5vh;
+    border-bottom: 0.01vh solid rgb(22, 212, 212);
+    img{
+        float: left;
+        opacity: o.3;
+    }
+}
+.login_register_box{
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    input{
+        display: block;
+        margin: 10px auto;
+        height: 6vh;
+        width: 100%;
+        border-bottom: 0.01vh solid #ccc;
+        font-size: 17px;
+    }
+    input::placeholder{
+        color:rgb(223, 192, 193);
+        font-size: 2.5vh;
+      }
+    button{
+        margin-top: 10px;
+        width: 100%;
+        height: 6vh;
+        background: #FF5A05;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 2.5vh;
+    }
+    p{
+        text-align: left;
+        margin-top: 20px;
+        font-size: 2.7vh;
+        color: rgb(158, 118, 118);
+    }
+}
+.setupbody{
+    float: left;
+    width: 100%;
+    height: 90%;
+    background: #F5F5F5;
+}
