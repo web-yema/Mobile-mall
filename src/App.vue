@@ -72,14 +72,14 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width:450px ) {
+@media screen and (min-width:500px ) {
   body{
     margin: 0 auto;
-    width: 67vh;
+    width: 500px;
     position: relative;
   }
   .footer{
-    width: 67vh !important;
+    width: 500px !important;
   }
 }
 .container {

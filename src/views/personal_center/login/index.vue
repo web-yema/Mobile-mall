@@ -43,9 +43,9 @@ export default {
         password: this.inputpassword,
       };
       const Logincs = await Login(obj);
-      localStorage.setItem('users', JSON.stringify(Logincs.data.data.token));
       if (Logincs.data.code === 200) {
         this.$router.push({ path: '/personal_center' });
+        localStorage.setItem('users', JSON.stringify(Logincs.data.data.token));
       } else if (Logincs.data.code === 201) {
         alert('密码不正确');
       } else if (Logincs.data.code === 202) {

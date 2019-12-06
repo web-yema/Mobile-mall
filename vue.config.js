@@ -1,5 +1,7 @@
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
+const pxtoviewport = require('postcss-px-to-viewport');
 const mockData = require('./mockData');
 
 module.exports = {
@@ -8,6 +10,15 @@ module.exports = {
       stylus: {
         'resolve url': true,
         import: ['./src/theme'],
+      },
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtoviewport({
+            viewportWidth: 750,
+            unitPrecision: 2,
+          }),
+        ],
       },
     },
   },

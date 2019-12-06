@@ -2,7 +2,7 @@
   <div class="personal_center">
     <div class="topHeader">
       <div class="chunk">
-        <div @click="xinxi" class="headFace">
+        <div class="headFace">
           <img @click="touxiang" :src="this.headportrait" alt="">
           <span>{{this.username}}</span>
         </div>
@@ -45,6 +45,7 @@ export default {
       users: '', // 用户token
       headportrait: '', // 用户头像
       username: '', // 用户名
+      usermsg: '', // 个人信息
     };
   },
   watch: {
@@ -70,7 +71,7 @@ export default {
       this.headportrait = data.data.avatar;
       this.username = data.data.name;
       localStorage.setItem('usermsg', JSON.stringify(data.data));
-      if (this.users === null) {
+      if (this.users === null || data.data === 'success') {
         this.headportrait = this.imgSrc;
         this.username = '未登录';
       }
@@ -82,9 +83,6 @@ export default {
       }
     },
     zhanghu() {
-      this.judge();
-    },
-    xinxi() {
       this.judge();
     },
     shezhi() {
