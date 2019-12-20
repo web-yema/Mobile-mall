@@ -1,9 +1,6 @@
 <template>
     <div class="login_register">
-        <div class="big_top">
-            <div><img @click="out" :src="checkout" alt=""></div>
-            <div style="margin: 0 auto;font-size:3vh;">登 录</div>
-        </div>
+        <Topback ref="backson"></Topback>
         <div class="login_register_box">
             <input v-model="inputusername" type="text" placeholder="请输入账号">
             <input v-model="inputpassword" type="password" placeholder="请输入密码">
@@ -20,19 +17,17 @@ import {
 export default {
   data() {
     return {
-      // eslint-disable-next-line global-require
-      checkout: require('../../../icon/checkout.png'),
       inputusername: '',
       inputpassword: '',
     };
   },
   mounted() {
-
+    this.topback();
   },
   methods: {
-    //   返回
-    out() {
-      window.history.go(-1);
+    // 头部组件
+    topback() {
+      this.$refs.backson.text = '登 录';
     },
     register() {
       this.$router.push({ path: '/personal_center/register' });

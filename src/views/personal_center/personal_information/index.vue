@@ -1,9 +1,6 @@
 <template>
     <div class="personal_information login_register">
-        <div class="big_top">
-            <div><img @click="out" :src="checkout" alt=""></div>
-            <div style="margin: 0 auto;font-size:3vh;">个人信息</div>
-        </div>
+        <Topback ref="backson"></Topback>
         <div class="setupbody">
           <div class="chunk getbtm">
             <div class="headFace">
@@ -59,6 +56,7 @@ export default {
       window.history.go(-1);
     },
     receive() {
+      this.$refs.backson.text = '个人信息';
       this.usermsg = JSON.parse(localStorage.getItem('usermsg'));
       this.headportrait = this.usermsg.avatar;
       this.username = this.usermsg.name;
@@ -74,6 +72,10 @@ export default {
     },
     // 将头像显示
     async handleFile(e) {
+      const files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+      // eslint-disable-next-line prefer-destructuring
+      this.headportrait = files[0];
       const asd = await headportrait({ id: this.headid });
     },
     handleDocumentClick(e) {

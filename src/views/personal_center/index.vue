@@ -55,14 +55,13 @@ export default {
       } else {
         this.transitionName = 'slide-right';
       }
+      this.yonghu();
     },
+    // eslint-disable-next-line no-dupe-keys
   },
   mounted() {
     this.yonghu();
     // this.imgSrc = require(`${this.headportrait }`);
-  },
-  updated() {
-    this.yonghu();
   },
   methods: {
     async yonghu() {
@@ -70,11 +69,12 @@ export default {
       const { data } = await getadmin(this.users);
       this.headportrait = data.data.avatar;
       this.username = data.data.name;
-      localStorage.setItem('usermsg', JSON.stringify(data.data));
-      if (this.users === null || data.data === 'success') {
+      if (!this.username || !this.headportrait) {
         this.headportrait = this.imgSrc;
         this.username = '未登录';
+        localStorage.clear();
       }
+      localStorage.setItem('usermsg', JSON.stringify(data.data));
     },
     touxiang() {
       this.judge();

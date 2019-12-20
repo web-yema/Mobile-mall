@@ -91,12 +91,12 @@ body {
   bottom: 0;
   width: 100%;
   background: #fff;
-  height: 9vh;
+  height: 7vh;
   border-top: 0.01vh solid #e3e3e3;
 }
 .cube-tab {
   i {
-    font-size: 5vh;
+    font-size: 4vh;
   }
   font-size: 2vh;
 }

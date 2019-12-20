@@ -1,14 +1,11 @@
 <template>
     <div class="login_register">
-        <div class="big_top">
-            <div><img @click="out" :src="checkout" alt=""></div>
-            <div style="margin: 0 auto;font-size:3vh;">注 册</div>
-        </div>
+        <Topback ref="backson"></Topback>
         <div class="login_register_box">
             <input v-model="inputusername" type="text" placeholder="请输入账号">
             <input v-model="inputpassword" type="password" placeholder="请输入密码">
             <input v-model="ainputpassword" type="password" placeholder="确认密码">
-            <button @click="register()">注册</button>
+            <button @click="register">注册</button>
         </div>
     </div>
 </template>
@@ -29,12 +26,12 @@ export default {
     };
   },
   mounted() {
-
+    this.topback();
   },
   methods: {
-    //   返回
-    out() {
-      window.history.go(-1);
+    // 头部组件
+    topback() {
+      this.$refs.backson.text = '注 册';
     },
     async register() {
       const obj = {
@@ -45,7 +42,8 @@ export default {
       console.log(data);
       if (data.code === 200) {
         this.$router.push({ path: '/personal_center/login' });
-      } else if (data.code === 202) {
+        return false;
+      } if (data.code === 202) {
         console.log(data);
       }
     },

@@ -7,6 +7,7 @@ import router from './router';
 import store from './store';
 import 'amfe-flexible';
 import filers from './util/filters';
+import './views/global';
 // 创建了一个vue实例
 Vue.prototype.$bus = new Vue();
 

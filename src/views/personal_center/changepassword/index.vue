@@ -60,6 +60,7 @@ export default {
         };
         const { data } = await changepassword(obj);
         if (data.code === 200) {
+          alert('修改成功');
           this.$router.push({ path: '/personal_center/setup' });
         } else if (data.code === 201) {
           alert('旧密码错误');
