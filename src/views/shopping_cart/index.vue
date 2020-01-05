@@ -158,7 +158,7 @@ export default {
 
 <style>
 .about{
-  background: rgb(223, 232, 235);
+  background: #F5F5F5;
   height: 86.2vh;
   overflow-y: scroll;
   position: relative;
@@ -175,7 +175,7 @@ export default {
     background: #fff;
     border-radius:10px;
     display: flex;
-    padding: 10px;
+    padding: 20px 10px;
 }
 .selectCircle{
     width: 20px;
@@ -198,6 +198,7 @@ export default {
     width: 500px;
 }
 .title{
+  margin-top: 10px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

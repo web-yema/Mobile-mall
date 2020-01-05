@@ -6,7 +6,6 @@
             <div class="headFace">
               <img :src="this.headportrait" alt="">
             </div>
-             <!-- eslint-disable-next-line max-len -->
             <span style="line-height:15vh;color:#2e2e2e" class="grshezhi" @click="changeheadimg">头像</span>
           </div>
             <div class="big_tong">
@@ -74,9 +73,17 @@ export default {
     async handleFile(e) {
       const files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
-      // eslint-disable-next-line prefer-destructuring
       this.headportrait = files[0];
       const asd = await headportrait({ id: this.headid });
+      // let $target = e.target || e.srcElement
+      // let file = $target.files[0]
+      // var reader = new FileReader()
+      // reader.onload = async(data) => {
+      //   let res = data.target || data.srcElement
+      //   this.headportrait = res.result
+      //   const asd = await headportrait({ id: this.headid });
+      // }
+      // reader.readAsDataURL(file)
     },
     handleDocumentClick(e) {
       // 点击颜色其它区域隐藏
